@@ -1,0 +1,61 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-container {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-links,
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a,
+.nav-actions a {
+  color: var(--text-secondary);
+
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-actions a:hover {
+  color: var(--text-primary);
+}
+
+.login-btn {
+  color: var(--text-primary);
+
+  padding: 10px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: var(--transition);
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
