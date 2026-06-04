@@ -1,24 +1,21 @@
-<article
-  class="photo-card"
-  [class.landscape]="photo.orientation === 'landscape'"
-  [class.portrait]="photo.orientation === 'portrait'"
-  (click)="openPhoto()">
+<article class="photo-card" [class.landscape]="photo.orientation === 'landscape'"
+    [class.portrait]="photo.orientation === 'portrait'" (click)="openPhoto()">
 
-  <img
-    [src]="photo.imageUrl"
-    [alt]="photo.title">
+    <img [src]="photo.imageUrl" [alt]="photo.title">
 
-  <div class="photo-overlay">
+    <div class="photo-overlay">
 
-    <div class="photo-meta">
-      <h3>{{ photo.title }}</h3>
-      <p>{{ photo.location }}</p>
+        <div class="photo-meta">
+            <h3>{{ photo.title }}</h3>
+            <p>{{ photo.location }}</p>
+        </div>
+
+        <button class="wishlist-btn" (click)="toggleWishlist($event)">
+
+            {{ isWishlisted() ? '♥' : '♡' }}
+
+        </button>
+
     </div>
-
-    <button class="wishlist-btn">
-      ♡
-    </button>
-
-  </div>
 
 </article>

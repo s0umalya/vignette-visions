@@ -1,64 +1,59 @@
 @if (modalService.selectedPhoto(); as photo) {
 
-<div
-  class="modal-backdrop"
-  (click)="modalService.close()">
+<div class="modal-backdrop" (click)="modalService.close()">
 
-  <div
-    class="modal-content"
-    (click)="$event.stopPropagation()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
 
-    <div class="modal-image">
+        <div class="modal-image">
 
-      <img
-        [src]="photo.imageUrl"
-        [alt]="photo.title">
+            <img [src]="photo.imageUrl" [alt]="photo.title">
 
-    </div>
+        </div>
 
-    <div class="modal-details">
+        <div class="modal-details">
 
-      <button
-        class="close-btn"
-        (click)="modalService.close()">
-        ✕
-      </button>
+            <button class="close-btn" (click)="modalService.close()">
+                ✕
+            </button>
 
-      <div class="photo-info">
+            <div class="photo-info">
 
-        <p class="photo-location">
-          {{ photo.location }}
-        </p>
+                <p class="photo-location">
+                    {{ photo.location }}
+                </p>
 
-        <h2>
-          {{ photo.title }}
-        </h2>
+                <h2>
+                    {{ photo.title }}
+                </h2>
 
-        <p class="photo-collection">
-          {{ photo.collectionId }}
-        </p>
+                <p class="photo-collection">
+                    {{ photo.collectionId }}
+                </p>
 
-      </div>
+            </div>
 
-      <div class="photo-actions">
+            <div class="photo-actions">
 
-        <button class="action-btn">
-          ♡ Add to Wishlist
-        </button>
+                <button class="action-btn" (click)="toggleWishlist()">
+                    {{ isWishlisted(photo.id)
+                    ? '♥ Remove from Wishlist'
+                    : '♡ Save to Wishlist'
+                    }}
+                </button>
 
-        <button class="action-btn primary">
-          Buy Print
-        </button>
+                <button class="action-btn primary">
+                    Buy Print
+                </button>
 
-        <button class="action-btn">
-          Share
-        </button>
+                <button class="action-btn">
+                    Share
+                </button>
 
-      </div>
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 
