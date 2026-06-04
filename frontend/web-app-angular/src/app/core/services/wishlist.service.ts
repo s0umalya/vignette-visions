@@ -8,13 +8,11 @@ export class WishlistService {
   private wishlistIds =
     signal<string[]>([]);
 
-  readonly count = computed(
-    () => this.wishlistIds().length
-  );
+  readonly ids =
+    computed(() => this.wishlistIds());
 
-  readonly ids = computed(
-    () => this.wishlistIds()
-  );
+  readonly count =
+    computed(() => this.wishlistIds().length);
 
   toggle(photoId: string): void {
 
@@ -45,9 +43,5 @@ export class WishlistService {
       .includes(photoId);
 
   }
-
-  getIds(): string[] {
-  return this.wishlistIds();
-}
 
 }

@@ -1,23 +1,25 @@
 <section class="wishlist-page">
-
-  <div class="container">
-
-    <header class="page-header">
-
-      <h1>
-        Wishlist
-      </h1>
-
-      <p>
-        Photographs you've saved.
-      </p>
-
-    </header>
-
-    <app-photo-masonry-grid
-      [photos]="photos">
-    </app-photo-masonry-grid>
-
-  </div>
-
+    <div class="container">
+        <header class="page-header">
+            <h1>
+                Wishlist
+            </h1>
+            <p>
+                Photographs you've saved.
+            </p>
+        </header>
+        @if (photos().length) {
+        <app-photo-masonry-grid [photos]="photos()">
+        </app-photo-masonry-grid>
+        } @else {
+        <div class="empty-state">
+            <h2>
+                Your wishlist is empty
+            </h2>
+            <p>
+                Save photographs to view them later.
+            </p>
+        </div>
+        }
+    </div>
 </section>
