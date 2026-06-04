@@ -1,25 +1,16 @@
 <section class="gallery-preview section">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="gallery-header">
-      <h2 class="section-title">
-        Selected Frames
-      </h2>
-    </div>
+        <div class="gallery-header">
+            <h2 class="section-title">
+                Selected Frames
+            </h2>
+        </div>
 
-    <div class="gallery-layout">
-
-      @for (photo of photos; track photo.id) {
-
-        <app-photo-card
-          [photo]="photo">
-        </app-photo-card>
-
-      }
+        <app-photo-masonry-grid [photos]="photos">
+        </app-photo-masonry-grid>
 
     </div>
-
-  </div>
 
 </section>

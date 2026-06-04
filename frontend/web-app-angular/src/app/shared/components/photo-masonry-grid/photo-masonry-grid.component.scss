@@ -1,0 +1,28 @@
+.masonry-grid {
+  columns: 4;
+  column-gap: 24px;
+}
+
+.masonry-grid app-photo-card {
+  display: block;
+  margin-bottom: 24px;
+  break-inside: avoid;
+}
+
+@media (max-width: 1200px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}

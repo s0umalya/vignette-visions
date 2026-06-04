@@ -1,55 +1,46 @@
 <section class="gallery-page">
 
-  <div class="container">
+    <div class="container">
 
-    <header class="gallery-header">
+        <header class="gallery-header">
 
-      <p class="gallery-label">
-        Explore
-      </p>
+            <p class="gallery-label">
+                Explore
+            </p>
 
-      <h1>
-        Gallery
-      </h1>
+            <h1>
+                Gallery
+            </h1>
 
-      <p class="gallery-description">
-        A curated collection of photographs and visual stories.
-      </p>
+            <p class="gallery-description">
+                A curated collection of photographs and visual stories.
+            </p>
 
-    </header>
+        </header>
 
-    <div class="gallery-filters">
+        <div class="gallery-filters">
 
-      <button class="filter-btn active">
-        All
-      </button>
+            <button class="filter-btn active">
+                All
+            </button>
 
-      <button class="filter-btn">
-        Mountain Light
-      </button>
+            <button class="filter-btn">
+                Mountain Light
+            </button>
 
-      <button class="filter-btn">
-        Quiet Streets
-      </button>
+            <button class="filter-btn">
+                Quiet Streets
+            </button>
 
-      <button class="filter-btn">
-        Human Moments
-      </button>
+            <button class="filter-btn">
+                Human Moments
+            </button>
 
-    </div>
+        </div>
 
-    <div class="gallery-layout">
-
-      @for (photo of photos; track photo.id) {
-
-        <app-photo-card
-          [photo]="photo">
-        </app-photo-card>
-
-      }
+        <app-photo-masonry-grid [photos]="photos">
+        </app-photo-masonry-grid>
 
     </div>
-
-  </div>
 
 </section>
