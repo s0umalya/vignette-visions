@@ -6,20 +6,62 @@
       Vignette Visions
     </a>
 
-    <div class="nav-links">
-      <a routerLink="/gallery">Gallery</a>
-      <a routerLink="/collections">Collections</a>
-      <a routerLink="/about">About</a>
+    <div class="desktop-nav">
+
+      <div class="nav-links">
+        <a routerLink="/gallery">Gallery</a>
+        <a routerLink="/collections">Collections</a>
+        <a routerLink="/about">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <a routerLink="/wishlist">Wishlist</a>
+
+        <button class="login-btn">
+          Login
+        </button>
+      </div>
+
     </div>
 
-    <div class="nav-actions">
-      <a routerLink="/wishlist">Wishlist</a>
+    <button
+      class="menu-btn"
+      (click)="toggleMenu()">
 
-      <button class="login-btn">
-        Login
-      </button>
-    </div>
+      ☰
+
+    </button>
 
   </div>
 
 </nav>
+
+<div
+  class="mobile-menu"
+  [class.open]="isMenuOpen">
+
+  <button
+    class="close-btn"
+    (click)="toggleMenu()">
+
+    ✕
+
+  </button>
+
+  <div class="mobile-links">
+
+    <a routerLink="/gallery">Gallery</a>
+
+    <a routerLink="/collections">Collections</a>
+
+    <a routerLink="/about">About</a>
+
+    <a routerLink="/wishlist">Wishlist</a>
+
+    <button class="mobile-login-btn">
+      Login
+    </button>
+
+  </div>
+
+</div>

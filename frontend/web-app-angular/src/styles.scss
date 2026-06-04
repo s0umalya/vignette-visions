@@ -52,8 +52,12 @@ img {
 }
 
 .container {
-  width: min(100% - 48px, var(--container-width));
+  width: 100%;
+  max-width: var(--container-width);
+
   margin-inline: auto;
+
+  padding-inline: 24px;
 }
 
 .section {
