@@ -1,16 +1,22 @@
-import { Collection } from '../shared/models/collection.model';
+import { Collection } from "../shared/models/collection.model";
 
 export const collections: Collection[] = [
   {
-    id: 'banaras',
-    title: 'Banaras Mornings',
-    subtitle: 'Light, ritual and silence',
-    coverImageUrl: 'assets/images/collections/banaras-cover.jpg'
+    id: 'mountain-light',
+    title: 'Mountain Light',
+    subtitle: 'Sunrise, mist and distant horizons',
+    coverImageUrl: 'assets/images/collections/collections-nature.JPEG'
   },
   {
-    id: 'rangaroon',
-    title: 'Colours of Rangaroon',
-    subtitle: 'Mist and mountain stories',
-    coverImageUrl: 'assets/images/collections/rangaroon-cover.jpg'
+    id: 'quiet-streets',
+    title: 'Quiet Streets',
+    subtitle: 'Stories hidden in everyday journeys',
+    coverImageUrl: 'assets/images/collections/collections-street.JPG'
+  },
+  {
+    id: 'human-moments',
+    title: 'Human Moments',
+    subtitle: 'Expressions, rituals and fleeting connections',
+    coverImageUrl: 'assets/images/collections/collections-human.jpg'
   }
 ];

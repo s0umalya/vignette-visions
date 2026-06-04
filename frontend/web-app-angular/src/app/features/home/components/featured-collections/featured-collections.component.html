@@ -8,50 +8,16 @@
 
     <div class="collections-grid">
 
-      <article class="collection-card">
+      @for (
+        collection of collections;
+        track collection.id
+      ) {
 
-        <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
-          alt="Travel">
+        <app-collection-card
+          [collection]="collection">
+        </app-collection-card>
 
-        <div class="collection-overlay"></div>
-
-        <div class="collection-content">
-          <p>Travel</p>
-          <h3>Wandering Horizons</h3>
-        </div>
-
-      </article>
-
-      <article class="collection-card large">
-
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=80"
-          alt="Street">
-
-        <div class="collection-overlay"></div>
-
-        <div class="collection-content">
-          <p>Street</p>
-          <h3>City Atmospheres</h3>
-        </div>
-
-      </article>
-
-      <article class="collection-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
-          alt="Portraits">
-
-        <div class="collection-overlay"></div>
-
-        <div class="collection-content">
-          <p>Portraits</p>
-          <h3>Human Expressions</h3>
-        </div>
-
-      </article>
+      }
 
     </div>
 
