@@ -1,0 +1,31 @@
+.collection-details-page {
+  padding: 80px 0;
+}
+
+.collection-header {
+  margin-bottom: 64px;
+}
+
+.collection-label {
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 16px;
+}
+
+.collection-header h1 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(3rem, 8vw, 6rem);
+
+  margin-bottom: 16px;
+}
+
+.collection-description {
+  color: var(--text-secondary);
+
+  max-width: 700px;
+}

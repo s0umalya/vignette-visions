@@ -1,1 +1,31 @@
-<p>collection-details-page works!</p>
+@if (collection) {
+
+<section class="collection-details-page">
+
+  <div class="container">
+
+    <header class="collection-header">
+
+      <p class="collection-label">
+        Collection
+      </p>
+
+      <h1>
+        {{ collection.title }}
+      </h1>
+
+      <p class="collection-description">
+        {{ collection.subtitle }}
+      </p>
+
+    </header>
+
+    <app-photo-masonry-grid
+      [photos]="photos">
+    </app-photo-masonry-grid>
+
+  </div>
+
+</section>
+
+}

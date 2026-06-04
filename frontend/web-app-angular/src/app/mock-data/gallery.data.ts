@@ -7,7 +7,7 @@ export const galleryPhotos: Photo[] = [
     location: 'Darjeeling',
     imageUrl: 'assets/images/gallery/photo-1.JPEG',
     orientation: 'landscape',
-    collectionId: 'rangaroon'
+    collectionId: 'mountain-light'
   },
   {
     id: 'photo-2',
@@ -15,7 +15,7 @@ export const galleryPhotos: Photo[] = [
     location: 'Rangaroon',
     imageUrl: 'assets/images/gallery/photo-2.JPEG',
     orientation: 'portrait',
-    collectionId: 'rangaroon'
+    collectionId: 'quiet-streets'
   },
   {
     id: 'photo-3',
@@ -47,7 +47,7 @@ export const galleryPhotos: Photo[] = [
     location: 'Darjeeling',
     imageUrl: 'assets/images/gallery/photo-1.JPEG',
     orientation: 'landscape',
-    collectionId: 'rangaroon'
+    collectionId: 'mountain-light'
   },
   {
     id: 'photo-2',
@@ -63,7 +63,7 @@ export const galleryPhotos: Photo[] = [
     location: 'Rangaroon',
     imageUrl: 'assets/images/gallery/photo-3.JPEG',
     orientation: 'portrait',
-    collectionId: 'rangaroon'
+    collectionId: 'human-moments'
   },
   {
     id: 'photo-4',
@@ -79,6 +79,6 @@ export const galleryPhotos: Photo[] = [
     location: 'Banaras',
     imageUrl: 'assets/images/gallery/photo-5.JPEG',
     orientation: 'portrait',
-    collectionId: 'human'
+    collectionId: 'quiet-streets'
   }
 ];
