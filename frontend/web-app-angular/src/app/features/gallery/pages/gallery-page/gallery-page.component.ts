@@ -5,6 +5,7 @@ import { PhotoCardComponent } from '../../../../shared/components/photo-card/pho
 
 import { GalleryService } from '../../../../core/services/gallery.service';
 import { PhotoMasonryGridComponent } from '../../../../shared/components/photo-masonry-grid/photo-masonry-grid.component';
+import { collections } from '../../../../mock-data/collections.data';
 
 @Component({
   selector: 'app-gallery-page',
@@ -19,8 +20,71 @@ export class GalleryPageComponent {
 
   photos: Photo[] = [];
 
+  filteredPhotos: Photo[] = [];
+
+  searchTerm = '';
+
+  selectedCollection = 'all';
+
+  collections = collections;
+
   ngOnInit(): void {
-    this.photos = this.galleryService.getPhotos();
+    this.photos =
+      this.galleryService.getPhotos();
+
+    this.filteredPhotos = this.photos;
+  }
+
+  filterPhotos(): void {
+
+    this.filteredPhotos =
+      this.photos.filter(photo => {
+
+        const matchesCollection =
+          this.selectedCollection === 'all'
+          || photo.collectionId === this.selectedCollection;
+
+        const matchesSearch =
+          photo.title
+            .toLowerCase()
+            .includes(this.searchTerm.toLowerCase())
+          ||
+          photo.location
+            .toLowerCase()
+            .includes(this.searchTerm.toLowerCase());
+
+        return (
+          matchesCollection &&
+          matchesSearch
+        );
+
+      });
+
+  }
+
+  setCollection(
+    collectionId: string
+  ): void {
+
+    this.selectedCollection =
+      collectionId;
+
+    this.filterPhotos();
+
+  }
+
+  onSearch(
+    event: Event
+  ): void {
+
+    const input =
+      event.target as HTMLInputElement;
+
+    this.searchTerm =
+      input.value;
+
+    this.filterPhotos();
+
   }
 
 }

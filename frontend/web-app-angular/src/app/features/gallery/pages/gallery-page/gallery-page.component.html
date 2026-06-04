@@ -18,27 +18,40 @@
 
         </header>
 
-        <div class="gallery-filters">
+        <div class="gallery-controls">
 
-            <button class="filter-btn active">
-                All
-            </button>
-
-            <button class="filter-btn">
-                Mountain Light
-            </button>
-
-            <button class="filter-btn">
-                Quiet Streets
-            </button>
-
-            <button class="filter-btn">
-                Human Moments
-            </button>
+            <input type="text" placeholder="Search photographs..." (input)="onSearch($event)">
 
         </div>
 
-        <app-photo-masonry-grid [photos]="photos">
+        <div class="gallery-filters">
+
+            <button class="filter-btn" [class.active]="selectedCollection === 'all'" (click)="setCollection('all')">
+
+                All
+
+            </button>
+
+            @for (
+            collection of collections;
+            track collection.id
+            ) {
+
+            <button class="filter-btn" [class.active]="
+        selectedCollection === collection.id
+      " (click)="
+        setCollection(collection.id)
+      ">
+
+                {{ collection.title }}
+
+            </button>
+
+            }
+
+        </div>
+
+        <app-photo-masonry-grid [photos]="filteredPhotos">
         </app-photo-masonry-grid>
 
     </div>
