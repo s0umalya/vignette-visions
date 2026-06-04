@@ -1,1 +1,26 @@
-<p>photo-card works!</p>
+<article
+  class="photo-card"
+  [class.landscape]="photo.orientation === 'landscape'"
+  [class.portrait]="photo.orientation === 'portrait'">
+
+  <img
+    [src]="photo.imageUrl"
+    [alt]="photo.title">
+
+  <div class="photo-overlay">
+
+    <div class="photo-meta">
+
+      <h3>{{ photo.title }}</h3>
+
+      <p>{{ photo.location }}</p>
+
+    </div>
+
+    <button class="wishlist-btn">
+      ♡
+    </button>
+
+  </div>
+
+</article>
