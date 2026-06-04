@@ -1,13 +1,16 @@
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { galleryPreviewPhotos } from '../../../../mock-data/gallery-preview.data';
+import { PhotoCardComponent } from '../../../../shared/components/photo-card/photo-card.component';
+import { galleryPhotos } from '../../../../mock-data/gallery.data';
 
 @Component({
   selector: 'app-gallery-preview',
-  imports: [NgClass],
+  standalone: true,
+  imports: [PhotoCardComponent],
   templateUrl: './gallery-preview.component.html',
   styleUrl: './gallery-preview.component.scss'
 })
 export class GalleryPreviewComponent {
-  photos = galleryPreviewPhotos;
+
+  photos = galleryPhotos;
+
 }

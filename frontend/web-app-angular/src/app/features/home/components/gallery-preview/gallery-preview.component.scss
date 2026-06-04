@@ -1,156 +1,32 @@
 .gallery-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   margin-bottom: 48px;
-
-  gap: 24px;
 }
 
-.view-all-btn {
-  color: var(--text-secondary);
-
-  border-bottom: 1px solid var(--border-color);
-
-  padding-bottom: 4px;
-
-  transition: var(--transition);
+.gallery-layout {
+  columns: 4;
+  column-gap: 24px;
 }
 
-.view-all-btn:hover {
-  color: var(--text-primary);
+.gallery-layout app-photo-card {
+  display: block;
+  margin-bottom: 24px;
+  break-inside: avoid;
 }
 
-.editorial-grid {
-  display: grid;
-
-  grid-template-columns: repeat(12, 1fr);
-
-  gap: 24px;
-
-  grid-auto-rows: 80px;
-}
-
-.photo-card {
-  position: relative;
-
-  overflow: hidden;
-
-  border-radius: 20px;
-
-  cursor: pointer;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.7s ease;
-}
-
-.photo-card:hover img {
-  transform: scale(1.05);
-}
-
-.large {
-  grid-column: span 5;
-  grid-row: span 8;
-}
-
-.wide {
-  grid-column: span 4;
-  grid-row: span 4;
-}
-
-.tall {
-  grid-column: span 3;
-  grid-row: span 8;
-}
-
-.small {
-  grid-column: span 4;
-  grid-row: span 4;
-}
-
-.photo-overlay {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
-  padding: 24px;
-
-  opacity: 0;
-
-  transition: var(--transition);
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.82),
-      rgba(0, 0, 0, 0.1)
-    );
-}
-
-.photo-card:hover .photo-overlay {
-  opacity: 1;
-}
-
-.photo-meta h3 {
-  font-family: 'Playfair Display', serif;
-
-  font-size: 1.4rem;
-
-  margin-bottom: 6px;
-}
-
-.photo-meta p {
-  color: var(--text-secondary);
-}
-
-.wishlist-btn {
-  width: 42px;
-  height: 42px;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.12);
-
-  color: var(--text-primary);
-
-  backdrop-filter: blur(10px);
-
-  transition: var(--transition);
-}
-
-.wishlist-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-}
-
-@media (max-width: 992px) {
-  .editorial-grid {
-    grid-template-columns: repeat(1, 1fr);
-
-    grid-auto-rows: auto;
+@media (max-width: 1200px) {
+  .gallery-layout {
+    columns: 3;
   }
+}
 
-  .large,
-  .wide,
-  .tall,
-  .small {
-    grid-column: span 1;
-    grid-row: auto;
-
-    height: 420px;
+@media (max-width: 768px) {
+  .gallery-layout {
+    columns: 2;
   }
+}
 
-  .gallery-header {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 576px) {
+  .gallery-layout {
+    columns: 1;
   }
 }

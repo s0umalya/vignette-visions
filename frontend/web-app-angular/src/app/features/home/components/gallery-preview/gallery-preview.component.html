@@ -1,33 +1,25 @@
 <section class="gallery-preview section">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="gallery-header">
+    <div class="gallery-header">
+      <h2 class="section-title">
+        Selected Frames
+      </h2>
+    </div>
 
-            <h2 class="section-title">
-                Selected Frames
-            </h2>
+    <div class="gallery-layout">
 
-            <button class="view-all-btn">
-                View Full Gallery
-            </button>
+      @for (photo of photos; track photo.id) {
 
-        </div>
+        <app-photo-card
+          [photo]="photo">
+        </app-photo-card>
 
-        <div class="editorial-grid">
-
-            @for (photo of photos; track photo.title) {
-
-            <article class="photo-card" [ngClass]="photo.layout">
-
-                <img [src]="photo.imageUrl" [alt]="photo.title">
-
-            </article>
-
-            }
-
-        </div>
+      }
 
     </div>
+
+  </div>
 
 </section>

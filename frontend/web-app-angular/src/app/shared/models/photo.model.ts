@@ -1,4 +1,6 @@
-export type PhotoOrientation = 'landscape' | 'portrait';
+export type PhotoOrientation =
+  | 'landscape'
+  | 'portrait';
 
 export interface Photo {
   id: string;
