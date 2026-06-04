@@ -1,0 +1,65 @@
+@if (modalService.selectedPhoto(); as photo) {
+
+<div
+  class="modal-backdrop"
+  (click)="modalService.close()">
+
+  <div
+    class="modal-content"
+    (click)="$event.stopPropagation()">
+
+    <div class="modal-image">
+
+      <img
+        [src]="photo.imageUrl"
+        [alt]="photo.title">
+
+    </div>
+
+    <div class="modal-details">
+
+      <button
+        class="close-btn"
+        (click)="modalService.close()">
+        ✕
+      </button>
+
+      <div class="photo-info">
+
+        <p class="photo-location">
+          {{ photo.location }}
+        </p>
+
+        <h2>
+          {{ photo.title }}
+        </h2>
+
+        <p class="photo-collection">
+          {{ photo.collectionId }}
+        </p>
+
+      </div>
+
+      <div class="photo-actions">
+
+        <button class="action-btn">
+          ♡ Add to Wishlist
+        </button>
+
+        <button class="action-btn primary">
+          Buy Print
+        </button>
+
+        <button class="action-btn">
+          Share
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+}

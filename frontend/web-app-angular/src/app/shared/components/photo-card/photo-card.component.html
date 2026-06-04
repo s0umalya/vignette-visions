@@ -1,7 +1,8 @@
 <article
   class="photo-card"
   [class.landscape]="photo.orientation === 'landscape'"
-  [class.portrait]="photo.orientation === 'portrait'">
+  [class.portrait]="photo.orientation === 'portrait'"
+  (click)="openPhoto()">
 
   <img
     [src]="photo.imageUrl"

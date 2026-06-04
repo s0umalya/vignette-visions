@@ -1,0 +1,178 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #111;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  width: fit-content;
+
+  max-width: 95vw;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------ */
+/* Image Section      */
+/* ------------------ */
+
+.modal-image {
+  height: 70vh;
+
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image img {
+  height: 100%;
+
+  width: auto;
+
+  display: block;
+}
+
+/* ------------------ */
+/* Details Section    */
+/* ------------------ */
+
+.modal-details {
+  width: 420px;
+
+  min-width: 420px;
+
+  position: relative;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #111;
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  font-size: 1rem;
+
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.photo-location {
+  color: var(--text-secondary);
+
+  margin-bottom: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.photo-info h2 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 3rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 16px;
+}
+
+.photo-collection {
+  color: var(--text-secondary);
+}
+
+.photo-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 48px;
+}
+
+.action-btn {
+  padding: 14px 20px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  text-align: left;
+
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.action-btn.primary {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ------------------ */
+/* Mobile             */
+/* ------------------ */
+
+@media (max-width: 992px) {
+  .modal-content {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 95vw;
+  }
+
+  .modal-image {
+    height: 55vh;
+  }
+
+  .modal-details {
+    padding: 24px;
+  }
+
+  .photo-info h2 {
+    font-size: 2rem;
+  }
+}

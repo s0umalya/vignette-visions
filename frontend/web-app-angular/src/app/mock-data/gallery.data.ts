@@ -75,10 +75,10 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: 'photo-5',
-    title: 'Kanchenjunga',
-    location: 'Darjeeling',
-    imageUrl: 'assets/images/gallery/photo-4.JPEG',
-    orientation: 'landscape',
-    collectionId: 'rangaroon'
+    title: 'Laal',
+    location: 'Banaras',
+    imageUrl: 'assets/images/gallery/photo-5.JPEG',
+    orientation: 'portrait',
+    collectionId: 'human'
   }
 ];
