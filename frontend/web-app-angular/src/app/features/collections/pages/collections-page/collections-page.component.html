@@ -1,1 +1,38 @@
-<p>collections-page works!</p>
+<section class="collections-page">
+
+  <div class="container">
+
+    <header class="page-header">
+
+      <p class="page-label">
+        Explore
+      </p>
+
+      <h1>
+        Collections
+      </h1>
+
+      <p class="page-description">
+        Curated visual stories grouped by mood, place and theme.
+      </p>
+
+    </header>
+
+    <div class="collections-grid">
+
+      @for (
+        collection of collections;
+        track collection.id
+      ) {
+
+        <app-collection-card
+          [collection]="collection">
+        </app-collection-card>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

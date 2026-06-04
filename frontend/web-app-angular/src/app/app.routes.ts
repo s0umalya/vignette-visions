@@ -8,43 +8,48 @@ import { GalleryPageComponent } from './features/gallery/pages/gallery-page/gall
 import { CollectionsPageComponent } from './features/collections/pages/collections-page/collections-page.component';
 import { AboutPageComponent } from './features/about/pages/about-page/about-page.component';
 import { WishlistPageComponent } from './features/wishlist/pages/wishlist-page/wishlist-page.component';
+import { CollectionDetailsPageComponent } from './features/collections/pages/collection-details-page/collection-details-page.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: PublicLayoutComponent,
-
-    children: [
-      {
+    {
         path: '',
-        component: HomePageComponent,
-      },
+        component: PublicLayoutComponent,
 
-      {
-        path: 'gallery',
-        component: GalleryPageComponent,
-      },
+        children: [
+            {
+                path: '',
+                component: HomePageComponent,
+            },
 
-      {
-        path: 'collections',
-        component: CollectionsPageComponent,
-      },
+            {
+                path: 'gallery',
+                component: GalleryPageComponent,
+            },
 
-      {
-        path: 'about',
-        component: AboutPageComponent,
-      },
+            {
+                path: 'collections',
+                component: CollectionsPageComponent
+            },
+            {
+                path: 'collections/:id',
+                component: CollectionDetailsPageComponent
+            },
 
-      {
-        path: 'wishlist',
-        component: WishlistPageComponent,
-      },
-    ],
-  },
+            {
+                path: 'about',
+                component: AboutPageComponent,
+            },
 
-  {
-    path: 'admin',
-    component: AdminLayoutComponent,
-    children: [],
-  },
+            {
+                path: 'wishlist',
+                component: WishlistPageComponent,
+            },
+        ],
+    },
+
+    {
+        path: 'admin',
+        component: AdminLayoutComponent,
+        children: [],
+    },
 ];
