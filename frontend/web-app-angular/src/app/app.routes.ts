@@ -9,6 +9,7 @@ import { CollectionsPageComponent } from './features/collections/pages/collectio
 import { AboutPageComponent } from './features/about/pages/about-page/about-page.component';
 import { WishlistPageComponent } from './features/wishlist/pages/wishlist-page/wishlist-page.component';
 import { CollectionDetailsPageComponent } from './features/collections/pages/collection-details-page/collection-details-page.component';
+import { AdminDashboardPageComponent } from './features/admin/pages/admin-dashboard-page/admin-dashboard-page.component';
 
 export const routes: Routes = [
     {
@@ -50,6 +51,11 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminLayoutComponent,
-        children: [],
+        children: [
+            {
+                path: 'admin',
+                component: AdminDashboardPageComponent
+            },
+        ],
     },
 ];
