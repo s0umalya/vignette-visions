@@ -1,0 +1,39 @@
+.sign-up-page {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem 1.5rem;
+}
+
+.sign-up-card {
+  width: 100%;
+  max-width: 460px;
+}
+
+h1 {
+  margin-bottom: 2.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: .5rem;
+}
+
+.sign-in-link {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}

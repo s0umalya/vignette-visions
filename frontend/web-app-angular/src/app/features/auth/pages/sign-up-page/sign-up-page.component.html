@@ -1,1 +1,80 @@
-<p>sign-up-page works!</p>
+<section class="sign-up-page">
+
+  <div class="sign-up-card">
+
+    <h1>Create Account</h1>
+
+    <form
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSubmit()">
+
+      <app-vv-input
+        label="First Name"
+        placeholder="Enter your first name"
+        formControlName="firstName">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Last Name"
+        placeholder="Enter your last name"
+        formControlName="lastName">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        formControlName="email">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Phone Number (Optional)"
+        placeholder="Enter your phone number"
+        formControlName="phoneNumber">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Gender (Optional)"
+        placeholder="Male / Female / Other"
+        formControlName="gender">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Password"
+        placeholder="Create a password"
+        type="password"
+        formControlName="password">
+      </app-vv-input>
+
+      <app-vv-input
+        label="Confirm Password"
+        placeholder="Confirm your password"
+        type="password"
+        formControlName="confirmPassword">
+      </app-vv-input>
+
+      <div class="button-container">
+
+        <app-vv-button
+          label="Create Account">
+        </app-vv-button>
+
+      </div>
+
+    </form>
+
+    <div class="sign-in-link">
+
+      <span>
+        Already have an account?
+      </span>
+
+      <a routerLink="/sign-in">
+        Sign In →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

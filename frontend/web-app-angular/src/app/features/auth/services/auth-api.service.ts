@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 
 import { AuthResponse } from '../models/auth-response.model';
+import { RegisterRequest } from '../models/register-request.model';
+import { LoginRequest } from '../models/login-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +17,24 @@ export class AuthApiService {
 
   constructor(
     private http: HttpClient
-  ) {}
+  ) { }
 
-  register(payload: any): Observable<AuthResponse> {
+  register(
+    request: RegisterRequest
+  ): Observable<any> {
 
-    return this.http.post<AuthResponse>(
+    return this.http.post(
       `${environment.apiBaseUrl}/auth/register`,
-      payload
+      request
     );
 
   }
 
-  login(payload: any): Observable<AuthResponse> {
+  login(request: LoginRequest): Observable<AuthResponse> {
 
     return this.http.post<AuthResponse>(
       `${environment.apiBaseUrl}/auth/login`,
-      payload
+      request
     );
 
   }

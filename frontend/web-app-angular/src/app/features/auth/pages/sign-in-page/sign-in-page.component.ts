@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import {
+  FormBuilder,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
+
 import { RouterLink } from '@angular/router';
+
 import { AuthApiService } from '../../services/auth-api.service';
-import { VvButtonComponent } from '../../../../shared/components/ui/vv-button/vv-button.component';
+
 import { VvInputComponent } from '../../../../shared/components/ui/vv-input/vv-input.component';
+import { VvButtonComponent } from '../../../../shared/components/ui/vv-button/vv-button.component';
 
 @Component({
   selector: 'app-sign-in-page',
+  standalone: true,
   imports: [
     ReactiveFormsModule,
     RouterLink,
@@ -18,10 +25,14 @@ import { VvInputComponent } from '../../../../shared/components/ui/vv-input/vv-i
   styleUrl: './sign-in-page.component.scss'
 })
 export class SignInPageComponent {
-  private fb = inject(FormBuilder);
-  private authApiService = inject(AuthApiService);
 
-  signInForm = this.fb.group({
+  private fb = inject(FormBuilder);
+
+  private authApiService =
+    inject(AuthApiService);
+
+  signInForm = this.fb.nonNullable.group({
+
     email: [
       '',
       [
@@ -34,6 +45,7 @@ export class SignInPageComponent {
       '',
       Validators.required
     ]
+
   });
 
   onSubmit(): void {
@@ -42,9 +54,10 @@ export class SignInPageComponent {
       return;
     }
 
-    this.authApiService.login(
-      this.signInForm.getRawValue()
-    )
+    this.authApiService
+      .login(
+        this.signInForm.getRawValue()
+      )
       .subscribe({
 
         next: response => {
@@ -62,4 +75,5 @@ export class SignInPageComponent {
       });
 
   }
+
 }
