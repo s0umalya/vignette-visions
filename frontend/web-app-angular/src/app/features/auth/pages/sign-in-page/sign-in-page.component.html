@@ -1,39 +1,38 @@
 <section class="sign-in-page">
 
-  <div class="sign-in-card">
+    <div class="sign-in-card">
 
-    <h1>Welcome Back</h1>
+        <h1>Welcome Back</h1>
 
-    <form
-      [formGroup]="signInForm"
-      (ngSubmit)="onSubmit()">
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
 
-      <input
-        type="email"
-        placeholder="Email"
-        formControlName="email">
+            <app-vv-input label="Email" placeholder="Enter your email" type="email" formControlName="email">
+            </app-vv-input>
 
-      <input
-        type="password"
-        placeholder="Password"
-        formControlName="password">
+            <app-vv-input label="Password" placeholder="Enter your password" type="password" formControlName="password">
+            </app-vv-input>
 
-      <button type="submit">
-        Sign In
-      </button>
+            <div class="button-container">
 
-    </form>
+                <app-vv-button label="Sign In">
+                </app-vv-button>
 
-    <div class="sign-up-link">
+            </div>
 
-      <span>New to Vignette Visions?</span>
+        </form>
 
-      <a routerLink="/sign-up">
-        Create an account
-      </a>
+        <div class="sign-up-link">
+
+            <span>
+                New to Vignette Visions?
+            </span>
+
+            <a routerLink="/sign-up">
+                Create an account →
+            </a>
+
+        </div>
 
     </div>
-
-  </div>
 
 </section>

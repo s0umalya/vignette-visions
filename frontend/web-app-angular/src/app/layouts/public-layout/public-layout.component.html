@@ -1,6 +1,13 @@
-<app-navbar></app-navbar>
+<div class="public-layout">
 
-<router-outlet></router-outlet>
-<app-photo-modal></app-photo-modal>
+  <app-navbar></app-navbar>
 
-<app-footer></app-footer>
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-photo-modal></app-photo-modal>
+
+  <app-footer></app-footer>
+
+</div>

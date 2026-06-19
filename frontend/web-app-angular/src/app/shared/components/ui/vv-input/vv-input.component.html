@@ -1,0 +1,14 @@
+<div class="vv-input">
+
+  <label>
+    {{ label }}
+  </label>
+
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="updateValue($event)">
+
+</div>

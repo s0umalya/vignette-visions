@@ -1,0 +1,25 @@
+.vv-input {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+label {
+  color: rgba(255,255,255,0.7);
+  font-size: .9rem;
+}
+
+input {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 1rem 1.25rem;
+  color: white;
+  font-size: 1rem;
+  transition: border-color .3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.4);
+}
