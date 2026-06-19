@@ -1,27 +1,5 @@
 <app-hero-section></app-hero-section>
-<div style="padding:20px">
 
-  <button
-    (click)="authService.loginAsAdmin()">
-    Login As Admin
-  </button>
-
-  <button
-    (click)="authService.loginAsUser()">
-    Login As User
-  </button>
-
-  <button
-    (click)="authService.logout()">
-    Logout
-  </button>
-
-  <p>
-    Current Role:
-    {{ authService.role() }}
-  </p>
-
-</div>
 <app-featured-collections></app-featured-collections>
 
 <app-gallery-preview></app-gallery-preview>

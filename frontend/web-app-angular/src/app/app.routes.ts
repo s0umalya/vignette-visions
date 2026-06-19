@@ -10,6 +10,8 @@ import { AboutPageComponent } from './features/about/pages/about-page/about-page
 import { WishlistPageComponent } from './features/wishlist/pages/wishlist-page/wishlist-page.component';
 import { CollectionDetailsPageComponent } from './features/collections/pages/collection-details-page/collection-details-page.component';
 import { AdminDashboardPageComponent } from './features/admin/pages/admin-dashboard-page/admin-dashboard-page.component';
+import { SignInPageComponent } from './features/auth/pages/sign-in-page/sign-in-page.component';
+import { SignUpPageComponent } from './features/auth/pages/sign-up-page/sign-up-page.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +47,14 @@ export const routes: Routes = [
                 path: 'wishlist',
                 component: WishlistPageComponent,
             },
+            {
+                path: 'sign-in',
+                component: SignInPageComponent
+            },
+            {
+                path: 'sign-up',
+                component: SignUpPageComponent
+            }
         ],
     },
 
