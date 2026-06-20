@@ -34,6 +34,26 @@ export class AuthService {
     this.currentUserSignal()?.role === 'admin'
   );
 
+  constructor() {
+
+    const token =
+      localStorage.getItem('token');
+
+    const user =
+      localStorage.getItem('user');
+
+    if (token && user) {
+
+      this.tokenSignal.set(token);
+
+      this.currentUserSignal.set(
+        JSON.parse(user)
+      );
+
+    }
+
+  }
+
   setSession(
     token: string,
     user: User
@@ -43,14 +63,20 @@ export class AuthService {
 
     this.currentUserSignal.set(user);
 
+    localStorage.setItem('token', token);
+
+    localStorage.setItem(
+      'user',
+      JSON.stringify(user)
+    );
+
   }
 
   logout(): void {
-
     this.tokenSignal.set(null);
-
     this.currentUserSignal.set(null);
-
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
 }
