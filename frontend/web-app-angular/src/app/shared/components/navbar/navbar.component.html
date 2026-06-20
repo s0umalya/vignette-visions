@@ -15,11 +15,54 @@
             </div>
 
             <div class="nav-actions">
-                <a routerLink="/wishlist">Wishlist</a>
+                @if (authService.isAuthenticated()) {
+                <a routerLink="/wishlist">
+                    Wishlist
+                </a>
+                <a routerLink="/cart">
+                    Cart
+                </a>
+                }
 
+                @if (authService.isAuthenticated()) {
+                <div class="profile-section">
+
+                    <span class="user-name">
+                        Hi, {{ authService.currentUser()?.firstName }}
+                    </span>
+
+                    <button class="profile-button" [matMenuTriggerFor]="profileMenu">
+
+                        <span class="material-symbols-outlined">
+                            account_circle
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <mat-menu #profileMenu="matMenu">
+
+                    <button mat-menu-item>
+
+                        Profile
+
+                    </button>
+
+                    <button mat-menu-item (click)="logout()">
+
+                        Logout
+
+                    </button>
+
+                </mat-menu>
+                }
+
+                @if (!authService.isAuthenticated()) {
                 <a routerLink="/sign-in">
                     Sign In
                 </a>
+                }
             </div>
 
         </div>

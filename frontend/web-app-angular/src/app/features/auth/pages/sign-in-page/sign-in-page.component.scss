@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 2rem 1.5rem;
+  padding-top: var(--navbar-height);
 }
 
 .sign-in-card {
   width: 100%;
   max-width: 460px;
+  padding: 2rem 1.5rem;
 }
 
 h1 {
