@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
+import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { Router, RouterOutlet } from '@angular/router';
-import { PhotoModalComponent } from '../../shared/components/photo-modal/photo-modal.component';
+import { PhotoModalComponent } from '../../../shared/components/photo-modal/photo-modal.component';
 
 @Component({
   selector: 'app-public-layout',

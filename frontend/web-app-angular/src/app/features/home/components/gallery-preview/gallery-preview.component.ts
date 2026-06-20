@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PhotoCardComponent } from '../../../../shared/components/photo-card/photo-card.component';
-import { galleryPhotos } from '../../../../mock-data/gallery.data';
+import { galleryPhotos } from '../../../../data/gallery.data';
 import { PhotoMasonryGridComponent } from '../../../../shared/components/photo-masonry-grid/photo-masonry-grid.component';
 
 @Component({

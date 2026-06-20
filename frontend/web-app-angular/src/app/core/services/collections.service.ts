@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { collections } from '../../mock-data/collections.data';
+import { collections } from '../../data/collections.data';
 import { Collection } from '../../shared/models/collection.model';
 
 @Injectable({

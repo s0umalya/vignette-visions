@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { galleryPhotos } from '../../mock-data/gallery.data';
+import { galleryPhotos } from '../../data/gallery.data';
 import { Photo } from '../../shared/models/photo.model';
 
 @Injectable({

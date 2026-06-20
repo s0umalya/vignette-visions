@@ -3,67 +3,54 @@ import {
   computed,
   signal
 } from '@angular/core';
+import { User } from '../../features/auth/models/user.model';
 
-import {
-  User,
-  UserRole
-} from '../../shared/models/user.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  private tokenSignal =
+    signal<string | null>(null);
+
   private currentUserSignal =
     signal<User | null>(null);
 
-  currentUser =
-    computed(() => this.currentUserSignal());
+  token = computed(() =>
+    this.tokenSignal()
+  );
 
-  role =
-    computed<UserRole>(() =>
-      this.currentUserSignal()?.role ?? 'guest'
-    );
+  currentUser = computed(() =>
+    this.currentUserSignal()
+  );
 
-  isAuthenticated =
-    computed(() =>
-      this.currentUserSignal() !== null
-    );
+  isAuthenticated = computed(() =>
+    !!this.currentUserSignal()
+  );
 
-  isAdmin =
-    computed(() =>
-      this.role() === 'admin'
-    );
+  isAdmin = computed(() =>
+    this.currentUserSignal()?.role === 'admin'
+  );
 
-  isUser =
-    computed(() =>
-      this.role() === 'user'
-    );
+  setSession(
+    token: string,
+    user: User
+  ): void {
 
-  loginAsAdmin(): void {
+    this.tokenSignal.set(token);
 
-    this.currentUserSignal.set({
-      id: '1',
-      name: 'Soumalya',
-      email: 'admin@vignettevisions.com',
-      role: 'admin'
-    });
-
-  }
-
-  loginAsUser(): void {
-
-    this.currentUserSignal.set({
-      id: '2',
-      name: 'Demo User',
-      email: 'user@test.com',
-      role: 'user'
-    });
+    this.currentUserSignal.set(user);
 
   }
 
   logout(): void {
+
+    this.tokenSignal.set(null);
+
     this.currentUserSignal.set(null);
+
   }
 
 }

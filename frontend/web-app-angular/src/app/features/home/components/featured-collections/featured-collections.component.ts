@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CollectionCardComponent } from '../../../../shared/components/collection-card/collection-card.component';
 
-import { collections } from '../../../../mock-data/collections.data';
+import { collections } from '../../../../data/collections.data';
 
 @Component({
   selector: 'app-featured-collections',

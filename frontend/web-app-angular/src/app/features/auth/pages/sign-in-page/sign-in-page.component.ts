@@ -5,9 +5,10 @@ import {
   Validators
 } from '@angular/forms';
 
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { AuthApiService } from '../../services/auth-api.service';
+import { AuthService } from '../../../../core/services/auth.service';
 
 import { VvInputComponent } from '../../../../shared/components/ui/vv-input/vv-input.component';
 import { VvButtonComponent } from '../../../../shared/components/ui/vv-button/vv-button.component';
@@ -27,12 +28,11 @@ import { VvButtonComponent } from '../../../../shared/components/ui/vv-button/vv
 export class SignInPageComponent {
 
   private fb = inject(FormBuilder);
-
-  private authApiService =
-    inject(AuthApiService);
+  private router = inject(Router);
+  private authApiService = inject(AuthApiService);
+  private authService = inject(AuthService);
 
   signInForm = this.fb.nonNullable.group({
-
     email: [
       '',
       [
@@ -40,12 +40,10 @@ export class SignInPageComponent {
         Validators.email
       ]
     ],
-
     password: [
       '',
       Validators.required
     ]
-
   });
 
   onSubmit(): void {
@@ -55,14 +53,17 @@ export class SignInPageComponent {
     }
 
     this.authApiService
-      .login(
-        this.signInForm.getRawValue()
-      )
+      .login(this.signInForm.getRawValue())
       .subscribe({
 
         next: response => {
 
-          console.log(response);
+          this.authService.setSession(
+            response.token,
+            response.user
+          );
+
+          this.router.navigate(['/']);
 
         },
 

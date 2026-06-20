@@ -5,7 +5,7 @@ import { PhotoCardComponent } from '../../../../shared/components/photo-card/pho
 
 import { GalleryService } from '../../../../core/services/gallery.service';
 import { PhotoMasonryGridComponent } from '../../../../shared/components/photo-masonry-grid/photo-masonry-grid.component';
-import { collections } from '../../../../mock-data/collections.data';
+import { collections } from '../../../../data/collections.data';
 
 @Component({
   selector: 'app-gallery-page',
