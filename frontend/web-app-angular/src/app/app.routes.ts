@@ -12,6 +12,8 @@ import { CollectionDetailsPageComponent } from './features/collections/pages/col
 import { AdminDashboardPageComponent } from './features/admin/pages/admin-dashboard-page/admin-dashboard-page.component';
 import { SignInPageComponent } from './features/auth/pages/sign-in-page/sign-in-page.component';
 import { SignUpPageComponent } from './features/auth/pages/sign-up-page/sign-up-page.component';
+import { guestGuard } from './core/guards/guest.guard';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -46,14 +48,23 @@ export const routes: Routes = [
             {
                 path: 'wishlist',
                 component: WishlistPageComponent,
+                canActivate: [authGuard]
+            },
+
+            {
+                path: 'cart',
+                // component: CartPageComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'sign-in',
-                component: SignInPageComponent
+                component: SignInPageComponent,
+                canActivate: [guestGuard]
             },
             {
                 path: 'sign-up',
-                component: SignUpPageComponent
+                component: SignUpPageComponent,
+                canActivate: [guestGuard]
             }
         ],
     },
