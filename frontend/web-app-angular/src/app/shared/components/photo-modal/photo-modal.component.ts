@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { NgIf } from '@angular/common';
 
-import { PhotoModalService } from '../../../core/services/photo-modal.service';
-import { WishlistService } from '../../../core/services/wishlist.service';
+import { PhotoModalService }
+from '../../../core/services/photo-modal.service';
 
+import { WishlistService }
+from '../../../core/services/wishlist.service';
 
 @Component({
   selector: 'app-photo-modal',
@@ -14,11 +16,19 @@ import { WishlistService } from '../../../core/services/wishlist.service';
 })
 export class PhotoModalComponent {
 
-  modalService = inject(PhotoModalService);
-  private wishlistService = inject(WishlistService);
+  modalService =
+    inject(PhotoModalService);
+
+  protected wishlistService =
+    inject(WishlistService);
+
   isWishlisted(photoId: string): boolean {
-    return this.wishlistService.isWishlisted(photoId);
+
+    return this.wishlistService
+      .isWishlisted(photoId);
+
   }
+
   toggleWishlist(): void {
 
     const photo =

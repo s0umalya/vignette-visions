@@ -35,10 +35,13 @@
             <div class="photo-actions">
 
                 <button class="action-btn" (click)="toggleWishlist()">
-                    {{ isWishlisted(photo.id)
-                    ? '♥ Remove from Wishlist'
-                    : '♡ Save to Wishlist'
-                    }}
+                    @if (
+                    wishlistService.isWishlisted(photo.id)
+                    ) {
+                    Remove from Wishlist
+                    } @else {
+                    Add to Wishlist
+                    }
                 </button>
 
                 <button class="action-btn primary">

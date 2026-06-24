@@ -51,11 +51,11 @@ export const routes: Routes = [
                 canActivate: [authGuard]
             },
 
-            {
-                path: 'cart',
+            // {
+            //     path: 'cart',
                 // component: CartPageComponent,
-                canActivate: [authGuard]
-            },
+            //     canActivate: [authGuard]
+            // },
             {
                 path: 'sign-in',
                 component: SignInPageComponent,

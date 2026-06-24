@@ -8,5 +8,7 @@ export interface Photo {
   location: string;
   imageUrl: string;
   orientation: PhotoOrientation;
-  collectionId: string;
+  collectionIds: string[];
+  tags?: string[];
+  description?: string;
 }

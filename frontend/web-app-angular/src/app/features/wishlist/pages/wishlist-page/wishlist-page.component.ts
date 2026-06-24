@@ -25,20 +25,18 @@ export class WishlistPageComponent {
   private galleryService =
     inject(GalleryService);
 
-  wishlistService =
+  protected wishlistService =
     inject(WishlistService);
 
   photos = computed(() => {
 
-    const ids =
-      this.wishlistService.ids();
+    const wishlistIds =
+      this.wishlistService.wishlist();
 
-    return this
-      .galleryService
+    return this.galleryService
       .getPhotos()
-      .filter(
-        photo =>
-          ids.includes(photo.id)
+      .filter(photo =>
+        wishlistIds.includes(photo.id)
       );
 
   });

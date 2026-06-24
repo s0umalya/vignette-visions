@@ -1,46 +1,101 @@
-import { Injectable, computed, signal } from '@angular/core';
+import {
+  Injectable,
+  computed,
+  signal
+} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
 
-  private wishlistIds =
+  private wishlistSignal =
     signal<string[]>([]);
 
-  readonly ids =
-    computed(() => this.wishlistIds());
+  wishlist = computed(() =>
+    this.wishlistSignal()
+  );
 
-  readonly count =
-    computed(() => this.wishlistIds().length);
+  constructor() {
 
-  toggle(photoId: string): void {
+    const storedWishlist =
+      localStorage.getItem('wishlist');
 
-    const ids = this.wishlistIds();
+    if (storedWishlist) {
 
-    if (ids.includes(photoId)) {
-
-      this.wishlistIds.set(
-        ids.filter(id => id !== photoId)
+      this.wishlistSignal.set(
+        JSON.parse(storedWishlist)
       );
 
-      return;
     }
-
-    this.wishlistIds.set([
-      ...ids,
-      photoId
-    ]);
 
   }
 
-  isWishlisted(
-    photoId: string
-  ): boolean {
+  add(photoId: string): void {
 
-    return this
-      .wishlistIds()
+    if (this.isWishlisted(photoId)) {
+      return;
+    }
+
+    this.wishlistSignal.update(items => {
+
+      const updatedItems = [
+        ...items,
+        photoId
+      ];
+
+      this.save(updatedItems);
+
+      return updatedItems;
+
+    });
+
+  }
+
+  remove(photoId: string): void {
+
+    this.wishlistSignal.update(items => {
+
+      const updatedItems =
+        items.filter(id => id !== photoId);
+
+      this.save(updatedItems);
+
+      return updatedItems;
+
+    });
+
+  }
+
+  toggle(photoId: string): void {
+
+    if (this.isWishlisted(photoId)) {
+
+      this.remove(photoId);
+
+      return;
+
+    }
+
+    this.add(photoId);
+
+  }
+
+  isWishlisted(photoId: string): boolean {
+
+    return this.wishlistSignal()
       .includes(photoId);
+
+  }
+
+  private save(
+    wishlist: string[]
+  ): void {
+
+    localStorage.setItem(
+      'wishlist',
+      JSON.stringify(wishlist)
+    );
 
   }
 
